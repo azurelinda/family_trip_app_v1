@@ -139,13 +139,13 @@ const itineraryData = [
 
 const InfoToolsData = {
   flights: [
-    { type: '去程 (國際)', date: '4/7 (二)', airline: '達美航空', route: 'TPE 09:35 -> SEA -> LAS 18:20', note: '機票4人約 NT$56,804' },
-    { type: '去程 (國內)', date: '4/11 (六)', airline: '西南航空', route: 'LAS 23:45 -> MCO 07:10(+1)', note: '紅眼班機，票價 $613.6 USD' },
-    { type: '回程 (國際)', date: '4/18 (六)', airline: '美航/星宇', route: 'MCO 18:11 -> PHX -> TPE 04:55(4/20)', note: '機票4人 $2,024 USD' }
+    { type: '去程 (國際)', date: '4/7 (二)', airline: '達美航空', route: 'TPE 09:35 -> SEA -> LAS 18:20', note: '4人約 NT$56,804 (單人 NT$14,201)' },
+    { type: '去程 (國內)', date: '4/11 (六)', airline: '西南航空', route: 'LAS 23:45 -> MCO 07:10(+1)', note: '4人 $613.60 USD (單人 $153.40 USD)' },
+    { type: '回程 (國際)', date: '4/18 (六)', airline: '美航/星宇', route: 'MCO 18:11 -> PHX -> TPE 04:55(4/20)', note: '4人 $2,024 USD (單人 $506 USD)' }
   ],
   hotels: [
-    { date: '4/7 - 4/9 (2晚)', name: 'Horseshoe Las Vegas', location: '賭城大道正中心' },
-    { date: '4/9 - 4/10 (1晚)', name: 'Best Western Plus', location: '金曼 Kingman (切分車程)' },
+    { date: '4/7 - 4/9 (2晚)', name: 'Horseshoe Las Vegas', location: '賭城大道正中心 ($286.74 USD)' },
+    { date: '4/9 - 4/10 (1晚)', name: 'Best Western Plus', location: '金曼 Kingman ($170.00 USD)' },
     { date: '4/10 - 4/11 (1晚)', name: 'Nirvana Hotel', location: 'TWD 8,199 (約 $260 USD)' },
     { date: '4/12 - 4/18 (6晚)', name: '奧蘭多精選飯店', location: '奧蘭多度假區' }
   ]
@@ -251,15 +251,16 @@ function ItineraryView({ selectedDay, setSelectedDay }) {
 
 function ToolsView() {
   const expenses = [
-    { id: 1, name: '去程機票-達美4人 (NT$56,804)', amount: 1803.30 },
-    { id: 2, name: '回程機票-美航/星宇4人', amount: 2024.00 },
-    { id: 3, name: '國內線-西南4人 ($613.6)', amount: 613.60 },
+    { id: 1, name: '去程機票-達美 (4人$1803.3/單人$450.8)', amount: 1803.30 },
+    { id: 2, name: '回程機票-美航/星宇 (4人$2024/單人$506)', amount: 2024.00 },
+    { id: 3, name: '國內線-西南 (4人$613.6/單人$153.4)', amount: 613.60 },
     { id: 4, name: 'ESTA 簽證費用 (4人)', amount: 161.08 },
     { id: 5, name: '天馬租車 (休旅車 3天)', amount: 538.56 },
-    { id: 6, name: 'Nirvana Hotel (1晚 TWD 8,199)', amount: 260.28 },
-    { id: 7, name: 'Wynn Buffet 4人預算', amount: 239.96 },
-    { id: 8, name: '奧蘭多樂園門票估算', amount: 2800.00 },
-    { id: 9, name: '13天總伙食費預估', amount: 6000.00 }
+    { id: 6, name: 'Horseshoe Las Vegas (2晚)', amount: 286.74 },
+    { id: 7, name: 'Best Western Plus (1晚)', amount: 170.00 },
+    { id: 8, name: 'Nirvana Hotel (1晚 TWD 8,199)', amount: 260.28 },
+    { id: 9, name: 'Wynn Buffet 4人預算', amount: 239.96 },
+    { id: 10, name: '奧蘭多迪士尼門票 (3天4人)', amount: 2227.36 }
   ];
   const totalUSD = expenses.reduce((sum, item) => sum + item.amount, 0);
 
